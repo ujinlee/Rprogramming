@@ -1,3 +1,7 @@
+
+## This is a code to cache the inverse of a matrix
+## MakeCacheMatrix uses a function to store a matrix, compute the inverse and store it
+
 makeCacheMatrix <- function(x=matrix()){
         inv <- NULL
         set <- function(y){
@@ -7,6 +11,12 @@ makeCacheMatrix <- function(x=matrix()){
         setinverse <- function(inverse) inv <<- inverse
         getinverse <- function() inv
         list(set=set, get=get, setinverse=setinverse, getinverse=getinverse)}
+
+## Check inverse of the given matrix,
+## If the inverse has been calculated (and the matrix is the same), 
+## then the cachesolve should retrieve the inverse from the cache. 
+## If the inverse has not been calculated, data gets the matrix stored with makeCacheMatrix 
+## m calculates the inverse, and x$setmean(m) stores it in the object m in makeCacheMatrix.
 
 cacheSolve <- function(x, ...){
         inv <- x$getinverse()
